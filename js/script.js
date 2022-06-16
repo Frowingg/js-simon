@@ -1,34 +1,32 @@
 let game = true;
 let numbers = prodNumbers(1, 100);
+let correctedNumbers = [];
 alert(numbers)
 
 function prodNumbers(min, max) {
     let tempNumbers = [];
-    for(i=1; i<=5; i++) {
+    while(tempNumbers.length<5) {
         number = Math.floor(Math.random() * (max - min + 1) ) + min;
-        if(tempNumbers.includes(number)) {
-            i--;
-        } else {
-            tempNumbers += number + ' '
+        if(!tempNumbers.includes(number)) {
+            tempNumbers.push(number)
         }
     }
     return tempNumbers
 }
 function userGuess() {
     for(i=1; i<=5; i++) {
-        num = parseInt(prompt('dammi un numero'))
-        if (numbers.includes(num)) {
-            alert('bravo');
-        } else {
-            alert('sei na pippa!');
-            break;
+        num = parseInt(prompt(`dammi il ${i} numero di 5`))
+        // if (numbers.includes(num)) {
+        //     correctedNumbers.push(num);
+        // }
+        if (numbers[i-1] === num) {
+            correctedNumbers.push(num);
         }
-    alert('hai vinto!')
     } 
-
+    alert(`hai indovinato ${correctedNumbers.length} numeri \n ${correctedNumbers}`)
 }
 
-setTimeout(userGuess, 3000);
+setTimeout(userGuess, 30000);
 
 
 
