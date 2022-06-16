@@ -1,3 +1,8 @@
+let game = true;
+let numbers = prodNumbers(1, 100);
+alert(numbers)
+console.log(numbers)
+
 function prodNumbers(min, max) {
     let tempNumbers = [];
     for(i=1; i<=5; i++) {
@@ -10,28 +15,22 @@ function prodNumbers(min, max) {
     }
     return tempNumbers
 }
-let game = true;
-let numbers = prodNumbers(1, 100);
-alert(numbers)
-console.log(numbers)
+function userGuess() {
+    for(i=1; i<=5; i++) {
+        num = parseInt(prompt('dammi un numero'))
+        if (numbers.includes(num)) {
+            alert('bravo');
+        } else {
+            alert('sei na pippa!');
+            break;
+        }
+    alert('hai vinto!')
+    } 
 
-setTimeout(userGuess(numbers), 30000);
-console.log(timer)
-
-function userGuess(numbers) {
-    for(i=1; i<=5;i++) { 
-        while (game) {      
-            num = parseInt(prompt('prova a indovinare i 5 numeri di prima'));
-            if(numbers.includes(num)) {
-                alert('azzeccato!');
-            } else {
-                alert('hai sbagliato!');
-                game = false;
-            }
-        }     
-        alert('hai vinto!');
-        game = false; 
-    }
-    
 }
+
+setTimeout(userGuess, 3000);
+
+
+
 
