@@ -1,7 +1,6 @@
 let game = true;
 let numbers = prodNumbers(1, 100);
 alert(numbers)
-console.log(numbers)
 
 function prodNumbers(min, max) {
     let tempNumbers = [];
