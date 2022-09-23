@@ -1,3 +1,6 @@
+// creo un array di 5 numeri e lo mostro all'utente per 10 secondi
+// poi l'utente di ricordarsi e scrivere nell'alter i numeri cercandodi azzecarne il più possibile
+
 let game = true;
 let numbers = prodNumbers(1, 100);
 let correctedNumbers = [];
@@ -16,9 +19,6 @@ function prodNumbers(min, max) {
 function userGuess() {
     for(i=1; i<=5; i++) {
         num = parseInt(prompt(`dammi il ${i} numero di 5`))
-        // if (numbers.includes(num)) {
-        //     correctedNumbers.push(num);
-        // }
         if (numbers[i-1] === num) {
             correctedNumbers.push(num);
         }
@@ -26,7 +26,7 @@ function userGuess() {
     alert(`hai indovinato ${correctedNumbers.length} numeri \n ${correctedNumbers}`)
 }
 
-setTimeout(userGuess, 30000);
+setTimeout(userGuess, 10000);
 
 
 
